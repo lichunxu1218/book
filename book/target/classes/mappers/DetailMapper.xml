@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.icss.mapper.DetailMapper">
+  <resultMap id="BaseResultMap" type="com.icss.bean.Detail">
+    <!--@mbg.generated-->
+    <!--@Table detail-->
+    <id column="bid" jdbcType="INTEGER" property="bid" />
+    <id column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="bcount" jdbcType="INTEGER" property="bcount" />
+    <result column="money" jdbcType="DECIMAL" property="money" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    bid, `uid`, bcount, money
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from detail
+    where bid = #{bid,jdbcType=INTEGER}
+      and `uid` = #{uid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    <!--@mbg.generated-->
+    delete from detail
+    where bid = #{bid,jdbcType=INTEGER}
+      and `uid` = #{uid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.icss.bean.Detail">
+    <!--@mbg.generated-->
+    insert into detail (bid, `uid`, bcount, 
+      money)
+    values (#{bid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{bcount,jdbcType=INTEGER}, 
+      #{money,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.icss.bean.Detail">
+    <!--@mbg.generated-->
+    insert into detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bid != null">
+        bid,
+      </if>
+      <if test="uid != null">
+        `uid`,
+      </if>
+      <if test="bcount != null">
+        bcount,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bid != null">
+        #{bid,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="bcount != null">
+        #{bcount,jdbcType=INTEGER},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.icss.bean.Detail">
+    <!--@mbg.generated-->
+    update detail
+    <set>
+      <if test="bcount != null">
+        bcount = #{bcount,jdbcType=INTEGER},
+      </if>
+      <if test="money != null">
+        money = #{money,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where bid = #{bid,jdbcType=INTEGER}
+      and `uid` = #{uid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.icss.bean.Detail">
+    <!--@mbg.generated-->
+    update detail
+    set bcount = #{bcount,jdbcType=INTEGER},
+      money = #{money,jdbcType=DECIMAL}
+    where bid = #{bid,jdbcType=INTEGER}
+      and `uid` = #{uid,jdbcType=INTEGER}
+  </update>
+</mapper>

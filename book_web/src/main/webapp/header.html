@@ -1,0 +1,144 @@
+<!--导入jquery-->
+<script src="js/jquery-3.3.1.js"></script>
+
+<header id="header">
+
+    <div class="shortcut">
+        <div class="logo" style="margin-left: 40%">
+            <a href="/"><img src="images/logo.jpg" alt=""></a>
+        </div>
+        <!-- 未登录状态  -->
+        <div class="login_out">
+            <a href="login.html">登录</a>
+            <button class="tj" data-toggle="modal" data-target="#adduser">用户注册</button>
+            <button class="tj" data-toggle="modal" data-target="#addshop">用户注册</button>
+        </div>
+        <!-- 登录状态  -->
+        <div class="login">
+
+            <span id="span_username"></span>
+            <a href="myfavorite.html" class="collection">我的收藏</a>
+            <a href="myfavorite.html" class="collection">购物车</a>
+            <button class="xg" data-toggle="modal" data-target="#update">修改</button>
+            <!--            <a href="javascript:location.href='exitServlet';">退出</a>-->
+            <a id="exit">退出</a>
+        </div>
+    </div>
+    <div class="header_wrap">
+        <div class="topbar">
+
+            <div class="search">
+                <input name="" type="text" placeholder="请输入路线名称" class="search_input" autocomplete="off">
+                <a href="javascript:;" class="search-button">搜索</a>
+            </div>
+
+        </div>
+    </div>
+
+</header>
+<!-- 头部 end -->
+<!-- 首页导航 -->
+<div class="navitem">
+    <ul class="nav" id="category" category>
+        <li><a href="route_list.html">机票</a></li>
+        <li><a href="route_list.html">火车票</a></li>
+        <li><a href="route_list.html">酒店</a></li>
+        <li><a href="route_list.html">门票</a></li>
+        <li><a href="route_list.html">国内游</a></li>
+        <li><a href="route_list.html">国际游</a></li>
+        <li><a href="route_list.html">定制游</a></li>
+        <li><a href="route_list.html">自由行</a></li>
+        <li><a href="route_list.html">跟团游</a></li>
+        <li><a href="favoriterank.html">收藏排行榜</a></li>
+    </ul>
+</div>
+
+<!-- 用户新增模态框（Modal） -->
+<div class="modal fade" id="adduser" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="userModalLabel"><b>注册</b></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="userfrom">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">姓名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="请输入姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd" class="col-sm-2 control-label">密码</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="password" name="password" placeholder="请输入密码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="col-sm-2 control-label">手机号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="请输入手机号">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">退出</button>
+                <button type="button" class="btn btn-primary" id="useradd">注册</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<!-- 商家新增模态框（Modal） -->
+<div class="modal fade" id="addshop" tabindex="-1" role="dialog" aria-labelledby="shopModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="shopModalLabel"><b>注册</b></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="shopform">
+                    <div class="form-group">
+                        <label for="sname" class="col-sm-2 control-label">姓名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="sname" name="sname" placeholder="请输入姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd" class="col-sm-2 control-label">密码</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="pwd" name="pwd" placeholder="请输入密码">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address" class="col-sm-2 control-label">地址</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="address" name="address" placeholder="请输入地址">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telephone" class="col-sm-2 control-label">商家电话号码</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="telephone" name="telephone" placeholder="请输入电话号码">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">退出</button>
+                <button type="button" class="btn btn-primary" id="shopadd">注册</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<script type="text/javascript" src="js/header.js"></script>
+<script src="js/getParameter.js"></script>
+    
