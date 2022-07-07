@@ -1,0 +1,25 @@
+﻿后端：
+url：       http://localhost:8666   后端接口
+
+登录   
+	用户操作	http://localhost:8666/login?name=Mike&pwd=112233&type=1  用户的登录测试  返回1/0  和用户id
+	用户操作	http://localhost:8666/login?name=Mike&pwd=112233&type=2  用户登录返回0 
+				
+	商家操作	http://localhost:8666/login?name=shop1&pwd=123456&type=2  商家的登录测试  九
+			
+	共同操作	http://localhost:8666/exit             清理缓存
+			
+	用户操作	http://localhost:8666/shoppingCar?uid=1&bid=1     返回1/0							  
+							 							  											  
+图书：      	
+	用户操作	http://localhost:8666/book/getAll                    查询所有图书           返回PageInfo
+
+	商家操作	http://localhost:8666/book/getAllBySid?sid=1         查询商家图书信息    返回PageInfo
+			
+	商家操作	http://localhost:8666/book/addBook?sid=1    新增图书       返回1/0   崔
+	
+	商家操作        http://localhost:8666/book/updateBook?sid=1&bid=1     返回1/0
+				
+	商家操作	http://localhost:8666/book/getAllBy?bid=1          返回Book 数据回显
+       
+用户：
