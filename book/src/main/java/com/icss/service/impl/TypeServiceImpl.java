@@ -1,12 +1,15 @@
 package com.icss.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import com.icss.mapper.TypeMapper;
 import com.icss.bean.Type;
+import com.icss.mapper.TypeMapper;
 import com.icss.service.TypeService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class TypeServiceImpl implements TypeService{
+public class TypeServiceImpl implements TypeService {
 
     @Resource
     private TypeMapper typeMapper;
@@ -39,6 +42,11 @@ public class TypeServiceImpl implements TypeService{
     @Override
     public int updateByPrimaryKey(Type record) {
         return typeMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<Type> getType() {
+        return typeMapper.getType();
     }
 
 }

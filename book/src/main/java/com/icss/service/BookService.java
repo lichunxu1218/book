@@ -1,5 +1,6 @@
 package com.icss.service;
 
+import com.github.pagehelper.PageInfo;
 import com.icss.bean.Book;
 public interface BookService{
 
@@ -16,4 +17,6 @@ public interface BookService{
 
     int updateByPrimaryKey(Book record);
 
+    //查询所有图书信息
+    PageInfo getAll(Integer page, String bname, Integer sid);
 }

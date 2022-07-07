@@ -1,6 +1,9 @@
 package com.icss.service;
 
 import com.icss.bean.Type;
+
+import java.util.List;
+
 public interface TypeService{
 
 
@@ -16,4 +19,5 @@ public interface TypeService{
 
     int updateByPrimaryKey(Type record);
 
+    List<Type> getType();
 }

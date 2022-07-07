@@ -1,142 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.icss.mapper.BookMapper">
-  <resultMap id="BaseResultMap" type="com.icss.bean.Book">
-    <!--@mbg.generated-->
-    <!--@Table book-->
-    <id column="bid" jdbcType="INTEGER" property="bid" />
-    <result column="img" jdbcType="VARCHAR" property="img" />
-    <result column="bname" jdbcType="VARCHAR" property="bname" />
-    <result column="binfo" jdbcType="VARCHAR" property="binfo" />
-    <result column="price" jdbcType="DECIMAL" property="price" />
-    <result column="num" jdbcType="INTEGER" property="num" />
-    <result column="addtime" jdbcType="DATE" property="addtime" />
-    <result column="sid" jdbcType="INTEGER" property="sid" />
-    <result column="type" jdbcType="VARCHAR" property="type" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--@mbg.generated-->
-    bid, img, bname, binfo, price, num, addtime, sid, `type`
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    <!--@mbg.generated-->
-    select 
-    <include refid="Base_Column_List" />
-    from book
-    where bid = #{bid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!--@mbg.generated-->
-    delete from book
-    where bid = #{bid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" keyColumn="bid" keyProperty="bid" parameterType="com.icss.bean.Book" useGeneratedKeys="true">
-    <!--@mbg.generated-->
-    insert into book (img, bname, binfo, 
-      price, num, addtime, sid, 
-      `type`)
-    values (#{img,jdbcType=VARCHAR}, #{bname,jdbcType=VARCHAR}, #{binfo,jdbcType=VARCHAR}, 
-      #{price,jdbcType=DECIMAL}, #{num,jdbcType=INTEGER}, #{addtime,jdbcType=DATE}, #{sid,jdbcType=INTEGER}, 
-      #{type,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" keyColumn="bid" keyProperty="bid" parameterType="com.icss.bean.Book" useGeneratedKeys="true">
-    <!--@mbg.generated-->
-    insert into book
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="img != null">
-        img,
-      </if>
-      <if test="bname != null">
-        bname,
-      </if>
-      <if test="binfo != null">
-        binfo,
-      </if>
-      <if test="price != null">
-        price,
-      </if>
-      <if test="num != null">
-        num,
-      </if>
-      <if test="addtime != null">
-        addtime,
-      </if>
-      <if test="sid != null">
-        sid,
-      </if>
-      <if test="type != null">
-        `type`,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="img != null">
-        #{img,jdbcType=VARCHAR},
-      </if>
-      <if test="bname != null">
-        #{bname,jdbcType=VARCHAR},
-      </if>
-      <if test="binfo != null">
-        #{binfo,jdbcType=VARCHAR},
-      </if>
-      <if test="price != null">
-        #{price,jdbcType=DECIMAL},
-      </if>
-      <if test="num != null">
-        #{num,jdbcType=INTEGER},
-      </if>
-      <if test="addtime != null">
-        #{addtime,jdbcType=DATE},
-      </if>
-      <if test="sid != null">
-        #{sid,jdbcType=INTEGER},
-      </if>
-      <if test="type != null">
-        #{type,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.icss.bean.Book">
-    <!--@mbg.generated-->
-    update book
-    <set>
-      <if test="img != null">
-        img = #{img,jdbcType=VARCHAR},
-      </if>
-      <if test="bname != null">
-        bname = #{bname,jdbcType=VARCHAR},
-      </if>
-      <if test="binfo != null">
-        binfo = #{binfo,jdbcType=VARCHAR},
-      </if>
-      <if test="price != null">
-        price = #{price,jdbcType=DECIMAL},
-      </if>
-      <if test="num != null">
-        num = #{num,jdbcType=INTEGER},
-      </if>
-      <if test="addtime != null">
-        addtime = #{addtime,jdbcType=DATE},
-      </if>
-      <if test="sid != null">
-        sid = #{sid,jdbcType=INTEGER},
-      </if>
-      <if test="type != null">
-        `type` = #{type,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where bid = #{bid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.icss.bean.Book">
-    <!--@mbg.generated-->
-    update book
-    set img = #{img,jdbcType=VARCHAR},
-      bname = #{bname,jdbcType=VARCHAR},
-      binfo = #{binfo,jdbcType=VARCHAR},
-      price = #{price,jdbcType=DECIMAL},
-      num = #{num,jdbcType=INTEGER},
-      addtime = #{addtime,jdbcType=DATE},
-      sid = #{sid,jdbcType=INTEGER},
-      `type` = #{type,jdbcType=VARCHAR}
-    where bid = #{bid,jdbcType=INTEGER}
-  </update>
+    <resultMap id="BaseResultMap" type="com.icss.bean.Book">
+        <!--@mbg.generated-->
+        <!--@Table book-->
+        <id column="bid" jdbcType="INTEGER" property="bid"/>
+        <result column="img" jdbcType="VARCHAR" property="img"/>
+        <result column="bname" jdbcType="VARCHAR" property="bname"/>
+        <result column="binfo" jdbcType="VARCHAR" property="binfo"/>
+        <result column="price" jdbcType="DECIMAL" property="price"/>
+        <result column="num" jdbcType="INTEGER" property="num"/>
+        <result column="addtime" jdbcType="DATE" property="addtime"/>
+        <result column="sid" jdbcType="INTEGER" property="sid"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        bid, img, bname, binfo, price, num, addtime, sid, `type`
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from book
+        where bid = #{bid,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        <!--@mbg.generated-->
+        delete
+        from book
+        where bid = #{bid,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="bid" keyProperty="bid" parameterType="com.icss.bean.Book" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into book (img, bname, binfo,
+                          price, num, addtime, sid,
+                          `type`)
+        values (#{img,jdbcType=VARCHAR}, #{bname,jdbcType=VARCHAR}, #{binfo,jdbcType=VARCHAR},
+                #{price,jdbcType=DECIMAL}, #{num,jdbcType=INTEGER}, #{addtime,jdbcType=DATE}, #{sid,jdbcType=INTEGER},
+                #{type,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" keyColumn="bid" keyProperty="bid" parameterType="com.icss.bean.Book"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into book
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="img != null">
+                img,
+            </if>
+            <if test="bname != null">
+                bname,
+            </if>
+            <if test="binfo != null">
+                binfo,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="num != null">
+                num,
+            </if>
+            <if test="addtime != null">
+                addtime,
+            </if>
+            <if test="sid != null">
+                sid,
+            </if>
+            <if test="type != null">
+                `type`,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="img != null">
+                #{img,jdbcType=VARCHAR},
+            </if>
+            <if test="bname != null">
+                #{bname,jdbcType=VARCHAR},
+            </if>
+            <if test="binfo != null">
+                #{binfo,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DECIMAL},
+            </if>
+            <if test="num != null">
+                #{num,jdbcType=INTEGER},
+            </if>
+            <if test="addtime != null">
+                #{addtime,jdbcType=DATE},
+            </if>
+            <if test="sid != null">
+                #{sid,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.icss.bean.Book">
+        <!--@mbg.generated-->
+        update book
+        <set>
+            <if test="img != null">
+                img = #{img,jdbcType=VARCHAR},
+            </if>
+            <if test="bname != null">
+                bname = #{bname,jdbcType=VARCHAR},
+            </if>
+            <if test="binfo != null">
+                binfo = #{binfo,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=DECIMAL},
+            </if>
+            <if test="num != null">
+                num = #{num,jdbcType=INTEGER},
+            </if>
+            <if test="addtime != null">
+                addtime = #{addtime,jdbcType=DATE},
+            </if>
+            <if test="sid != null">
+                sid = #{sid,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                `type` = #{type,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where bid = #{bid,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.icss.bean.Book">
+        <!--@mbg.generated-->
+        update book
+        set img     = #{img,jdbcType=VARCHAR},
+            bname   = #{bname,jdbcType=VARCHAR},
+            binfo   = #{binfo,jdbcType=VARCHAR},
+            price   = #{price,jdbcType=DECIMAL},
+            num     = #{num,jdbcType=INTEGER},
+            addtime = #{addtime,jdbcType=DATE},
+            sid     = #{sid,jdbcType=INTEGER},
+            `type`  = #{type,jdbcType=VARCHAR}
+        where bid = #{bid,jdbcType=INTEGER}
+    </update>
+
+
+    <select id="getAll" resultMap="BaseResultMap">
+        select *
+        from book
+        <where>
+            <if test="bname != null">
+                and bname like concat('%', #{bname}, '%')
+            </if>
+            <if test="sid != null">
+                and sid = #{sid}
+            </if>
+        </where>
+    </select>
 </mapper>

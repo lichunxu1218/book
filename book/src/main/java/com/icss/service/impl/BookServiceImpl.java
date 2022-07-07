@@ -1,5 +1,7 @@
 package com.icss.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.icss.mapper.BookMapper;
@@ -39,6 +41,14 @@ public class BookServiceImpl implements BookService{
     @Override
     public int updateByPrimaryKey(Book record) {
         return bookMapper.updateByPrimaryKey(record);
+    }
+
+    //查询所有图书信息
+    @Override
+    public PageInfo getAll(Integer page, String bname, Integer sid) {
+        PageHelper.startPage(page,8);
+        PageInfo pageInfo = new PageInfo(bookMapper.getAll(bname,sid),10);
+        return pageInfo;
     }
 
 }

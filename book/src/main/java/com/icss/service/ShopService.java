@@ -18,5 +18,5 @@ public interface ShopService{
 
     int updateByPrimaryKey(Shop record);
 
-    Shop loginShop(String sname,  String pwd);
+    Shop loginShop(String sname,String pwd);
 }

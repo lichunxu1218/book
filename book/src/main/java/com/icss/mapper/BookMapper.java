@@ -1,6 +1,9 @@
 package com.icss.mapper;
 
 import com.icss.bean.Book;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface BookMapper {
     /**
@@ -44,4 +47,7 @@ public interface BookMapper {
      * @return update count
      */
     int updateByPrimaryKey(Book record);
+
+    //查询所有图书信息
+    List<Book> getAll(@Param("bname") String bname, @Param("sid") Integer sid);
 }

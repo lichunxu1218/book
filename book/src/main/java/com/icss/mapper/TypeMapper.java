@@ -2,6 +2,8 @@ package com.icss.mapper;
 
 import com.icss.bean.Type;
 
+import java.util.List;
+
 public interface TypeMapper {
     /**
      * delete by primary key
@@ -44,4 +46,6 @@ public interface TypeMapper {
      * @return update count
      */
     int updateByPrimaryKey(Type record);
+
+    List<Type> getType();
 }
